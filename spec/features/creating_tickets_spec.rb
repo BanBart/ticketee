@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 feature "Creating Tickets" do
+    let!(:user) { FactoryGirl.create(:user) }
+    let!(:project) { FactoryGirl.create(:project) }
+    
     before do 
-        project = FactoryGirl.create(:project)
-        user = FactoryGirl.create(:user)
         
         visit '/'
         
@@ -27,7 +28,7 @@ feature "Creating Tickets" do
        
        expect(page).to have_content("Ticket has been created.")
        within "#ticket #author" do
-          expect(page).to have_content("Created by sample@example.com") 
+          expect(page).to have_content("Created by #{user.email}") 
        end
     end
     
