@@ -7,4 +7,8 @@ class Project < ActiveRecord::Base
     end
     
     has_many :tickets, dependent: :delete_all
+    
+    scope :for, ->(user) do
+        user.admin? ? Project.all : Project.viewable_by(user)
+    end
 end
