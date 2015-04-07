@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post "/signin", to: "sessions#create"
   delete "/signout", to: "sessions#destroy", as: "signout"
   
+  resources :files
   
   
   # The priority is based upon order of creation: first created -> highest priority.
