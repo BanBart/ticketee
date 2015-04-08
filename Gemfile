@@ -33,6 +33,8 @@ gem 'cancan', '~> 1.6.10'
 
 gem 'carrierwave', '0.8.0'
 
+gem 'database_cleaner', '1.0.1'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -43,6 +45,7 @@ gem 'carrierwave', '0.8.0'
 # gem 'debugger', group: [:development, :test]
 group :development, :test do
   gem 'rspec-rails', "~> 2.14"
+  gem 'selenium-webdriver'
 end
 
 group :test do
